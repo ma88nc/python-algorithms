@@ -1,10 +1,12 @@
 import sys
+# --------------------------------
+# Sieve of Eratosthenes
+# Ported from csharphelper.com:  http://csharphelper.com/blog/2014/08/use-the-sieve-of-eratosthenes-to-find-prime-numbers-in-c/
+# --------------------------------
 
 def MakeSieve(max):
     # Make an array indicating whether numbers are prime.
     print("In MakeSieve with max = {}".format(max))
-    ''' for i in range(2, max)
-        is_prime[i] = true '''
     is_prime = [True] * max 
 
     # Cross out multiples
