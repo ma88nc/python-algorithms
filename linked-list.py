@@ -42,7 +42,21 @@ class LinkedList:
             current = self.head
             while current.next != None:
                 current = current.next    
-            current.next = toAdd                           
+            current.next = toAdd 
+
+    def deleteItem(self, data):
+        prev = None
+        current = self.head
+        while current != None:
+            if current.data == data:
+                # If data found in the first item, set the head to next node.
+                if prev == None:
+                    self.head = current.next
+                # Otherwise set the previous item's next to the current's next.                    
+                else:
+                    prev.next = current.next
+            prev = current
+            current = current.next                                                                      
 
 
 def main():
@@ -53,6 +67,11 @@ def main():
     myList1.addFirst("Ron")
     myList1.addFirst("Hermione")
     myList1.addFirst("Ginny")
+    myList1.printAllNodes()
+
+    # Delete an item from the list
+    print("\nLinkus listus expungus")
+    myList1.deleteItem("Harry")
     myList1.printAllNodes()
 
     myList2 = LinkedList()
